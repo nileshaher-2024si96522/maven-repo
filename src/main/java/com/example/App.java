@@ -99,6 +99,24 @@ public class App {
     }
 
     /**
+     * Finds the largest number among three numbers
+     * @param a first number
+     * @param b second number
+     * @param c third number
+     * @return the largest number
+     */
+    public int findLargest(int a, int b, int c) {
+        int largest = a;
+        if (b > largest) {
+            largest = b;
+        }
+        if (c > largest) {
+            largest = c;
+        }
+        return largest;
+    }
+
+    /**
      * Main method
      * @param args command line arguments
      */
@@ -108,5 +126,6 @@ public class App {
         logger.info("5 - 3 = " + app.subtract(5, 3));
         logger.info("5 * 3 = " + app.multiply(5, 3));
         logger.info("5 / 3 = " + app.divide(5, 3));
+        logger.info("Largest of 10, 25, 15 = " + app.findLargest(10, 25, 15));
     }
 }
