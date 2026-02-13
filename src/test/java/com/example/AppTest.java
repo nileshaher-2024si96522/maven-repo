@@ -176,4 +176,53 @@ public class AppTest {
     public void testFormatNameWithEmptyString() {
         assertEquals("", app.formatName(""));
     }
+
+    // Tests for findLargest method
+    @Test
+    public void testFindLargestWithAllDifferentNumbers() {
+        assertEquals(30, app.findLargest(10, 20, 30));
+        assertEquals(50, app.findLargest(50, 20, 30));
+        assertEquals(90, app.findLargest(10, 90, 30));
+    }
+
+    @Test
+    public void testFindLargestWithFirstNumberLargest() {
+        assertEquals(100, app.findLargest(100, 50, 75));
+    }
+
+    @Test
+    public void testFindLargestWithSecondNumberLargest() {
+        assertEquals(80, app.findLargest(50, 80, 30));
+    }
+
+    @Test
+    public void testFindLargestWithThirdNumberLargest() {
+        assertEquals(95, app.findLargest(45, 60, 95));
+    }
+
+    @Test
+    public void testFindLargestWithEqualNumbers() {
+        assertEquals(10, app.findLargest(10, 10, 10));
+        assertEquals(20, app.findLargest(20, 20, 10));
+        assertEquals(20, app.findLargest(10, 20, 20));
+        assertEquals(20, app.findLargest(20, 10, 20));
+    }
+
+    @Test
+    public void testFindLargestWithNegativeNumbers() {
+        assertEquals(-1, app.findLargest(-1, -10, -20));
+        assertEquals(0, app.findLargest(-10, 0, -20));
+        assertEquals(5, app.findLargest(-5, 5, -15));
+    }
+
+    @Test
+    public void testFindLargestWithZero() {
+        assertEquals(0, app.findLargest(0, 0, 0));
+        assertEquals(15, app.findLargest(0, 15, 10));
+    }
+
+    @Test
+    public void testFindLargestWithLargeNumbers() {
+        assertEquals(999999, app.findLargest(999999, 500000, 750000));
+    }
 }
