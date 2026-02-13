@@ -1,9 +1,15 @@
 package com.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Simple Calculator class for SonarQube coverage testing
  */
 public class App {
+
+    // Logger instance
+    private static final Logger logger = LoggerFactory.getLogger(App.class);
 
     // Constants to replace magic numbers
     private static final int DISCOUNT_PERCENTAGE = 10;
@@ -98,9 +104,9 @@ public class App {
      */
     public static void main(String[] args) {
         App app = new App();
-        logger.log("5 + 3 = " + app.add(5, 3));
-        logger.log("5 - 3 = " + app.subtract(5, 3));
-        logger.log("5 * 3 = " + app.multiply(5, 3));
-        logger.log("5 / 3 = " + app.divide(5, 3));
+        logger.info("5 + 3 = " + app.add(5, 3));
+        logger.info("5 - 3 = " + app.subtract(5, 3));
+        logger.info("5 * 3 = " + app.multiply(5, 3));
+        logger.info("5 / 3 = " + app.divide(5, 3));
     }
 }
